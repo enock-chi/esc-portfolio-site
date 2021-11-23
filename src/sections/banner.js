@@ -81,9 +81,9 @@ const styles = {
       display: 'inline-flex',
       mb: [0, null, -6, null, null, '-40px', null, -3],
       img: {
-        height: [245, 'auto'],
+        height: [245, '25rem'],
         position: 'relative',
-        height: '18rem',
+        //height: '18rem',
       },
     },
     heading: {
@@ -92,8 +92,8 @@ const styles = {
     circle: {
       position: 'absolute',
       backgroundColor: '#EA3A60',
-      height: '15rem',
-      width: '20rem',
+      height: [245, '25rem'],
+      width: [245, '35rem'],
       top: '2rem',
       borderRadius: '50%',
       zIndex: -3,
