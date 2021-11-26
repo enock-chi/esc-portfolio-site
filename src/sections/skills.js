@@ -20,6 +20,7 @@ import ServiceThumb from 'assets/asset-selection-pana.png';
 import shapePattern from 'assets/shape-pattern1.png';
 
 export default function skills() {
+  const [videoOpen, setVideoOpen] = useState(false);
   const handleClick = (e) => {
     e.preventDefault();
     setVideoOpen(true);
@@ -45,8 +46,29 @@ export default function skills() {
         </Box>
         <Box sx={styles.contentBox}>
           <TextFeature subTitle={data.subTitle} title={data.title} />
+          <Grid sx={styles.grid}>
+            {data.features.map((feature) => (
+              <Box sx={styles.card} key={feature.id}>
+                <Image
+                  src={feature.imgSrc}
+                  alt={feature.altText}
+                  sx={styles.icon}
+                />
+                <Box sx={styles.wrapper}>
+                  <Heading sx={styles.wrapper.title}>{feature.title}</Heading>
+                  <Text sx={styles.wrapper.subTitle}>{feature.text}</Text>
+                </Box>
+              </Box>
+            ))}
+          </Grid>
         </Box>
       </Container>
+      <ModalVideo
+        channel="youtube"
+        isOpen={videoOpen}
+        videoId="LuZ1SqXjLmw"
+        onClose={() => setVideoOpen(false)}
+      />
     </section>
   );
 }
@@ -165,10 +187,17 @@ const styles = {
   },
   wrapper: {
     width: '100%',
+    transition: 'all 0.3s',
     display: 'flex',
     flexDirection: 'column',
+    boxShadow: '0px 0px 1px rgba(38, 78, 118, 0.35)',
+    padding: '10px',
+    borderRadius: '10px',
     textAlign: 'left',
     mt: '-5px',
+    '&:hover': {
+      boxShadow: '0px 6px 30px rgba(38, 78, 118, 0.1)',
+    },
     title: {
       fontSize: 3,
       color: 'heading_secondary',

@@ -8,11 +8,11 @@ export default [
     label: 'About Me',
   },
   {
-    path: 'pricing',
-    label: 'Pricing',
+    path: 'skills',
+    label: 'Skills',
   },
   {
-    path: 'testimonial',
-    label: 'Testimonial',
+    path: 'portfolio',
+    label: 'My Portfolio',
   },
 ];
