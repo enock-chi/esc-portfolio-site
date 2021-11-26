@@ -19,7 +19,7 @@ export default function Banner() {
           <Text as="p" variant="heroSecondary">
             You have a dream, let me get you there?
           </Text>
-          <Button variant="primary">Explore</Button>
+          <Button variant="primary">Contact Me</Button>
         </Box>
         <Box sx={styles.banner.imageBox}>
           <Image src={BannerImg}></Image>

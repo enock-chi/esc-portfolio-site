@@ -21,6 +21,8 @@ import shapePattern from 'assets/shape-pattern1.png';
 
 export default function skills() {
   const [videoOpen, setVideoOpen] = useState(false);
+  const firstRow = Math.floor(Math.round(data / 2));
+
   const handleClick = (e) => {
     e.preventDefault();
     setVideoOpen(true);
@@ -56,7 +58,6 @@ export default function skills() {
                 />
                 <Box sx={styles.wrapper}>
                   <Heading sx={styles.wrapper.title}>{feature.title}</Heading>
-                  <Text sx={styles.wrapper.subTitle}>{feature.text}</Text>
                 </Box>
               </Box>
             ))}
@@ -170,7 +171,6 @@ const styles = {
     pt: [2, null, null, null, 3],
     mx: 'auto',
     width: ['100%', 370, 420, '100%'],
-    gridGap: ['35px 0', null, null, null, '50px 0'],
     gridTemplateColumns: ['repeat(1,1fr)'],
   },
   card: {
@@ -180,8 +180,8 @@ const styles = {
   },
 
   icon: {
-    width: ['45px', null, null, null, '55px'],
-    height: 'auto',
+    width: '2rem',
+    height: '2rem',
     flexShrink: 0,
     mr: [3, null, null, null, 4],
   },
@@ -203,7 +203,6 @@ const styles = {
       color: 'heading_secondary',
       lineHeight: 1.4,
       fontWeight: 700,
-      mb: [2, null, 3, 2, 3],
     },
 
     subTitle: {

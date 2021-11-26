@@ -8,6 +8,8 @@ import Reactjs from 'assets/icons8-react.png';
 import cplus from 'assets/icons8-c++.svg';
 import Github from 'assets/icons8-github.svg';
 
+//dont forget features has a text attribute
+
 export default {
   subTitle: 'Skills',
   title: 'These are some weapons in my arsenal',
@@ -17,16 +19,42 @@ export default {
       imgSrc: Html5,
       altText: 'html5',
       title: 'HTML5',
-      text:
-        'Get your blood tests delivered at let home collect sample from the victory of the managements. your blood tests.',
     },
     {
       id: 2,
       imgSrc: Css3,
       altText: 'css3',
       title: 'CSS3',
-      text:
-        'Get your blood tests delivered at let home collect sample from the victory of the managements. your blood tests.',
+    },
+    {
+      id: 3,
+      imgSrc: Javascript,
+      altText: 'javascript',
+      title: 'Javascript',
+    },
+    {
+      id: 4,
+      imgSrc: Bootstrap,
+      altText: 'bootstrap',
+      title: 'Bootstrap',
+    },
+    {
+      id: 5,
+      imgSrc: Sass,
+      altText: 'sass',
+      title: 'Sass',
+    },
+    {
+      id: 6,
+      imgSrc: Jquery,
+      altText: 'jquery',
+      title: 'Jquery',
+    },
+    {
+      id: 7,
+      imgSrc: Reactjs,
+      altText: 'reactjs',
+      title: 'Reactjs',
     },
   ],
 };

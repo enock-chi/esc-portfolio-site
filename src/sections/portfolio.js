@@ -4,75 +4,28 @@ import SectionHeader from 'components/section-header';
 import Rating from 'components/rating';
 import ButtonGroup from 'components/button-group';
 import Carousel from 'react-multi-carousel';
-
-import Avatar1 from 'assets/testimonial/avatar1.png';
-import Avatar2 from 'assets/testimonial/avatar2.png';
-import Avatar3 from 'assets/testimonial/avatar3.png';
-import Avatar4 from 'assets/testimonial/avatar4.png';
-
-const data = [
-  {
-    id: 1,
-    title: 'Modern look & trending design',
-    description:
-      'Get working experience to work with this amazing team & in future want to work together for bright future projects and also make deposit to freelancer.',
-    avatar: Avatar1,
-    name: 'Denny Hilguston',
-    designation: '@denny.hil',
-    review: 4,
-  },
-  {
-    id: 2,
-    title: 'Design Quality & performance',
-    description:
-      'Get working experience to work with this amazing team & in future want to work together for bright future projects and also make deposit to freelancer.',
-    avatar: Avatar2,
-    name: 'Denny Hilguston',
-    designation: '@denny.hil',
-    review: 5,
-  },
-  {
-    id: 3,
-    title: 'Layout and organized layers',
-    description:
-      'Get working experience to work with this amazing team & in future want to work together for bright future projects and also make deposit to freelancer.',
-    avatar: Avatar3,
-    name: 'Denny Hilguston',
-    designation: '@denny.hil',
-    review: 5,
-  },
-  {
-    id: 4,
-    title: 'Modern look & trending design',
-    description:
-      'Get working experience to work with this amazing team & in future want to work together for bright future projects and also make deposit to freelancer.',
-    avatar: Avatar4,
-    name: 'Denny Hilguston',
-    designation: '@denny.hil',
-    review: 4,
-  },
-];
+import data from 'sections/portfolio-data';
 
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1619 },
-    items: 4,
-    slidesToSlide: 4, // optional, default to 1.
+    items: 3,
+    slidesToSlide: 1,
   },
   laptop: {
     breakpoint: { max: 1619, min: 1024 },
-    items: 3,
-    slidesToSlide: 3, // optional, default to 1.
+    items: 2,
+    slidesToSlide: 1,
   },
   tablet: {
     breakpoint: { max: 1024, min: 640 },
-    items: 2,
-    slidesToSlide: 2, // optional, default to 1.
+    items: 1,
+    slidesToSlide: 1,
   },
   mobile: {
     breakpoint: { max: 639, min: 0 },
     items: 1,
-    slidesToSlide: 1, // optional, default to 1.
+    slidesToSlide: 1,
   },
 };
 
@@ -110,7 +63,7 @@ export default function TestimonialCard() {
       </Container>
       <Box sx={styles.carouselWrapper}>
         <Carousel {...carouselParams}>
-          {data.map((item) => (
+          {data.data.map((item) => (
             <Box sx={styles.reviewCard} key={item.sliderClass}>
               <div className="card-footer">
                 <div className="image">
@@ -217,10 +170,11 @@ const styles = {
         flexShrink: 0,
         mr: [3, null, null, 4],
         display: 'flex',
+        justifyContent: 'center',
         img: {
-          width: '55px',
-          height: '55px',
-          borderRadius: '50%',
+          width: '13rem',
+          height: '13rem',
+          borderRadius: '10px',
           objectFit: 'cover',
         },
       },

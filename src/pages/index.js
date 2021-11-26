@@ -18,17 +18,18 @@ export default function IndexPage() {
   return (
     <ThemeProvider theme={theme}>
       <Layout>
-        <SEO title="NextJS Landing Page" />
+        <SEO title="ESC Portfolio site" />
         <Banner />
         <AboutMe />
         <Skills />
         <PortfolioCard />
-        <Feature />
-        <CoreFeature />
-        <WorkFlow />
-        <Package />
-        <TeamSection />
       </Layout>
     </ThemeProvider>
   );
 }
+
+// <Feature />
+// <CoreFeature />
+//<WorkFlow />
+// <Package />
+// <TeamSection

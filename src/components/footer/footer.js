@@ -2,11 +2,33 @@
 import { jsx, Box, Container, Image, Text } from 'theme-ui';
 import { Link } from 'components/link';
 import data from './footer.data';
-import FooterLogo from 'assets/logo.svg';
+import FooterLogo from 'assets/Escape Designs..jpg';
+import Logo from 'components/logo';
 
 export default function Footer() {
   return (
-    <h1>Footer</h1>
+    <footer sx={styles.footer}>
+      <Container>
+        <Box sx={styles.footer.footerBottomArea}>
+          <Link path="/">
+            <Logo src={FooterLogo} sx={styles.footer.logo} />
+          </Link>
+          <Box sx={styles.footer.menus}>
+            <nav>
+              {data.menuItem.map((item, index) => (
+                <Link
+                  path={item.path}
+                  key={index}
+                  label={item.label}
+                  sx={styles.footer.link}
+                />
+              ))}
+            </nav>
+          </Box>
+          <Text>Copyright by {new Date().getFullYear()} Escape Designs.</Text>
+        </Box>
+      </Container>
+    </footer>
   );
 }
 
@@ -50,6 +72,9 @@ const styles = {
     copyright: {
       fontSize: [1, '15px'],
       width: '100%',
+    },
+    logo: {
+      display: 'block',
     },
   },
 };
