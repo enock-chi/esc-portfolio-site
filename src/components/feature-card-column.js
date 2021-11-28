@@ -64,5 +64,6 @@ const styles = {
     padding: 0,
     margin: 0,
     color: 'blue',
+    cursor: 'pointer',
   },
 };
