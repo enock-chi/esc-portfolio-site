@@ -1,4 +1,3 @@
-/** @jsx jsx */
 import { jsx, Image, Box, Heading, Text } from 'theme-ui';
 import { useState } from 'react';
 
