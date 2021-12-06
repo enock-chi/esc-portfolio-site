@@ -1,8 +1,11 @@
+/** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { Text, Heading, Image, Box, Link } from 'theme-ui';
 
 export default function TeamCard({ src, altText, title, designation, social }) {
-  return <h1>TeamCard</h1>;
+  return (
+    <h1>TeamCard</h1>
+  );
 }
 
 const styles = {

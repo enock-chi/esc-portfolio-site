@@ -23,8 +23,3 @@ export default function IndexPage() {
   );
 }
 
-// <Feature />
-// <CoreFeature />
-//<WorkFlow />
-// <Package />
-// <TeamSection

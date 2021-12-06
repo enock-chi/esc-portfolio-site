@@ -1,3 +1,4 @@
+/** @jsx jsx */
 import { jsx, Image, Box, Heading, Text } from 'theme-ui';
 
 export default function FeatureCard({
@@ -6,7 +7,10 @@ export default function FeatureCard({
   title,
   text,
 }) {
-  return <h1>FeatureCard</h1>;
+  return (
+    <h1>FeatureCard</h1>
+
+  );
 }
 
 const styles = {

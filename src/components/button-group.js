@@ -1,6 +1,7 @@
+/** @jsx jsx */
 import { jsx, Box, Container, Flex } from 'theme-ui';
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from 'react-icons/io';
-import { Button } from 'theme-ui';
+import { Button } from '@theme-ui/components';
 
 export default function ButtonGroup({ next, previous }) {
   return (

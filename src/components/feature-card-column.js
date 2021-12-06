@@ -1,3 +1,4 @@
+/** @jsx jsx */
 import { jsx, Image, Box, Heading, Text } from 'theme-ui';
 import { useState } from 'react';
 
@@ -63,6 +64,5 @@ const styles = {
     padding: 0,
     margin: 0,
     color: 'blue',
-    cursor: 'pointer',
   },
 };

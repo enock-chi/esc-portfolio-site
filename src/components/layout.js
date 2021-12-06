@@ -1,3 +1,4 @@
+/** @jsx jsx */
 import { jsx } from 'theme-ui';
 import React, { useState } from 'react';
 import Sticky from 'react-stickynode';
@@ -14,13 +15,13 @@ export default function Layout({ children }) {
       setIsSticky(false);
     }
   };
-
+  
   return (
     <React.Fragment>
       <Sticky innerZ={1001} top={0} onStateChange={handleStateChange}>
         <Header className={`${isSticky ? 'sticky' : 'unSticky'}`} />
       </Sticky>
-      <main id="content" sx={{ variant: 'layout.main' }}>
+      <main id="content" sx={{ variant: 'layout.main', }} >
         {children}
       </main>
       <Footer />
