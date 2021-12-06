@@ -171,10 +171,10 @@ const styles = {
         display: 'flex',
         justifyContent: 'center',
         img: {
-          width: '13rem',
-          height: '13rem',
+          width: '17rem',
+          height: '15rem',
           borderRadius: '10px',
-          objectFit: 'cover',
+          objectFit: 'fill',
         },
       },
     },
