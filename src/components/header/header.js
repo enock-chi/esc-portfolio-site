@@ -6,33 +6,49 @@ import Logo from 'components/logo';
 import LogoDark from 'assets/Escape Designs..jpg';
 import MobileDrawer from './mobile-drawer';
 import menuItems from './header.data';
+import { useRouter } from 'next/router';
 
-export default function Header({ className }) {
+export default function Header({ className, home }) {
+  const router = useRouter();
   return (
     <header sx={styles.header} className={className} id="header">
       <Container sx={styles.container}>
         <Logo src={LogoDark} />
         <Flex as="nav" sx={styles.nav}>
-          {menuItems.map((item, i) => (
+          {home ? (
+            menuItems.map((item, i) => (
+              <Link
+                activeClass="active"
+                to={item.path}
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+                key={i}
+              >
+                {item.label}
+              </Link>
+            ))
+          ) : (
             <Link
               activeClass="active"
-              to={item.path}
+              onClick={() => router.push('/')}
               spy={true}
               smooth={true}
               offset={-70}
               duration={500}
-              key={i}
             >
-              {item.label}
+              {'Go to main'}
             </Link>
-          ))}
+          )}
         </Flex>
         <Button
           className="donate_btn"
           variant="secondary"
           aria-label="Get to know me"
+          onClick={() => router.push('/getToKnowMe')}
         >
-          Get to know me
+          Get to know me more?
         </Button>
         <MobileDrawer />
       </Container>

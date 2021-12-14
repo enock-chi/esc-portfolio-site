@@ -12,7 +12,7 @@ import PortfolioCard from '../sections/portfolio';
 export default function IndexPage() {
   return (
     <ThemeProvider theme={theme}>
-      <Layout>
+      <Layout home={true}>
         <SEO title="ESC Portfolio site" />
         <Banner />
         <AboutMe />
@@ -22,4 +22,3 @@ export default function IndexPage() {
     </ThemeProvider>
   );
 }
-

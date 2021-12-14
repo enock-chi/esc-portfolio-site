@@ -25,7 +25,10 @@ export default function Footer() {
               ))}
             </nav>
           </Box>
-          <Text>Copyright by {new Date().getFullYear()} Escape Designs.</Text>
+          <Text>
+            Copyright by {new Date().getFullYear()} Escape Designs. || Created
+            by: Enock Shaun Chikobvu(esc)
+          </Text>
         </Box>
       </Container>
     </footer>

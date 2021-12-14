@@ -1,5 +1,14 @@
 /** @jsx jsx */
-import { jsx, Container, Heading, Text, Box, Image } from 'theme-ui';
+import {
+  jsx,
+  Container,
+  Heading,
+  Text,
+  Box,
+  Image,
+  Grid,
+  Link,
+} from 'theme-ui';
 import SectionHeader from 'components/section-header';
 import ButtonGroup from 'components/button-group';
 import Carousel from 'react-multi-carousel';
@@ -52,6 +61,7 @@ const carouselParams = {
 };
 
 export default function TestimonialCard() {
+  const onClickHandler = (link) => {};
   return (
     <section id="portfolio" sx={{ variant: 'section.testimonial' }}>
       <Container csss={{ textAlign: 'center' }}>
@@ -63,7 +73,7 @@ export default function TestimonialCard() {
       <Box sx={styles.carouselWrapper}>
         <Carousel {...carouselParams}>
           {data.data.map((item) => (
-            <Box sx={styles.reviewCard} key={item.id}>
+            <Box sx={styles.card} key={item.id}>
               <div className="card-footer">
                 <div className="image">
                   <Image src={item.avatar} alt="Project Image" />
@@ -73,6 +83,18 @@ export default function TestimonialCard() {
                 {item.title}
               </Heading>
               <Text sx={styles.description}>{item.description}</Text>
+              <Grid gap={1} columns={[2, null, 2]} sx={styles.buttonContainer}>
+                <Box>
+                  <Link href={item.link} sx={styles.button} target="_blank">
+                    Launch Site
+                  </Link>
+                </Box>
+                <Box>
+                  <Link href={item.github} sx={styles.button} target="_blank">
+                    Open GitHub
+                  </Link>
+                </Box>
+              </Grid>
             </Box>
           ))}
         </Carousel>
@@ -114,7 +136,7 @@ const styles = {
       },
     },
   },
-  reviewCard: {
+  card: {
     boxShadow: '0px 0px 1px rgba(38, 78, 118, 0.35)',
     transition: 'all 0.3s',
     borderRadius: '6px',
@@ -174,7 +196,7 @@ const styles = {
           width: '17rem',
           height: '15rem',
           borderRadius: '10px',
-          objectFit: 'fill',
+          objectFit: 'scale-down',
         },
       },
     },
@@ -204,5 +226,21 @@ const styles = {
     fontWeight: '500',
     fontSize: 1,
     lineHeight: 1.4,
+  },
+  buttonContainer: {
+    marginTop: '1rem',
+  },
+  button: {
+    borderStyle: 'solid',
+    borderWidth: '1px',
+    borderColor: 'primary',
+    backgroundColor: 'white',
+    color: 'primary',
+    padding: '0.5rem',
+    borderRadius: '2rem',
+    '&:hover': {
+      cursor: 'pointer',
+      boxShadow: '0px 6px 30px rgba(38, 78, 118, 0.1)',
+    },
   },
 };

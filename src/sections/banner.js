@@ -4,8 +4,10 @@ import { Container, Box, Heading, Text, Image, Button } from 'theme-ui';
 import BannerImg from 'assets/Design inspiration-pana.svg';
 import ShapeLeft from 'assets/shape-left.png';
 import ShapeRight from 'assets/shape-right.png';
+import { useRouter } from 'next/router';
 
 export default function Banner() {
+  const router = useRouter();
   return (
     <section sx={styles.banner} id="home">
       <Container sx={styles.banner.container}>
@@ -17,9 +19,12 @@ export default function Banner() {
             I am Enock Chikobvu.
           </Heading>
           <Text as="p" variant="heroSecondary">
-            You have a dream, let me get you there?
+            A mint of creativity, creating engaging, purposeful, and creative
+            online environments.
           </Text>
-          <Button variant="primary">Contact Me</Button>
+          <Button variant="primary" onClick={() => router.push('/contact')}>
+            Contact Me
+          </Button>
         </Box>
         <Box sx={styles.banner.imageBox}>
           <Image src={BannerImg}></Image>
