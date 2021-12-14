@@ -21,7 +21,7 @@ import shapePattern from 'assets/shape-pattern1.png';
 import Layout from 'components/layout';
 import { ThemeProvider } from 'theme-ui';
 import theme from 'theme';
-import moreAboutMe from './About Me/getToKnowMe';
+import moreAboutMe from '../sections/About Me/getToKnowMe';
 
 export default function skills() {
   const [videoOpen, setVideoOpen] = useState(false);
