@@ -18,11 +18,11 @@ import Layout from 'components/layout';
 import { ThemeProvider } from 'theme-ui';
 import theme from 'theme';
 import emailjs from 'emailjs-com';
-import Popup from 'reactjs-popup';
-//import 'reactjs-popup/dist/index.css';
+import { useState } from 'react';
 
 export default function contact() {
   const router = useRouter();
+  const [popup, setPopup] = useState(false);
 
   const onSubmitHandler = () => {
     const name = document.getElementById('name').value;
@@ -44,6 +44,7 @@ export default function contact() {
           console.log(error.text);
         }
       );
+    setPopup(!popup);
   };
   return (
     <ThemeProvider theme={theme}>
@@ -70,17 +71,15 @@ export default function contact() {
               <Input name="email" id="email" mb={3} />
               <Label htmlFor="message">Message</Label>
               <Textarea name="message" id="message" rows={6} mb={3} />
-              <Popup
-                trigger={
-                  <Button onClick={() => onSubmitHandler()}>Submit</Button>
-                }
-              >
-                <Box>
+              <Box>
+                {popup ? (
                   <Text as="p" sx={styles.popup}>
                     Thank you for your interest, will be in touch soon.
                   </Text>
-                </Box>
-              </Popup>
+                ) : (
+                  <Button onClick={() => onSubmitHandler()}>Submit</Button>
+                )}
+              </Box>
             </Box>
           </Container>
         </section>
@@ -137,9 +136,12 @@ const styles = {
     heading: {
       color: '#EA3A60',
     },
-    popup: {
-      backgroundColor: '#008000',
-      color: 'white',
-    },
+  },
+  popup: {
+    backgroundColor: '#008000',
+    color: 'white',
+    margin: '0.5rem',
+    padding: '1rem',
+    borderRadius: '3rem',
   },
 };
