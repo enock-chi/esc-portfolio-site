@@ -193,9 +193,9 @@ const styles = {
         display: 'flex',
         justifyContent: 'center',
         img: {
-          width: '17rem',
+          width: '26.3rem',
           height: '15rem',
-          borderRadius: '10px',
+          boxShadow: '0px 0px 1px rgba(38, 78, 118, 0.35)',
           objectFit: 'scale-down',
         },
       },
